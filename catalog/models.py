@@ -26,8 +26,8 @@ class Product(models.Model):
         help_text="Введите категорию продукта",
     )
     price = models.FloatField(default=0.0, verbose_name="Цена за покупку")
-    date_created_at = models.DateField( verbose_name="Дата создания")
-    date_updated_at = models.DateField( verbose_name="Дата изменения")
+    date_created_at = models.DateField(verbose_name="Дата создания")
+    date_updated_at = models.DateField(verbose_name="Дата изменения")
 
     class Meta:
         verbose_name = 'Продукт'
