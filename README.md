@@ -60,3 +60,5 @@ CREATE INDEX IF NOT EXISTS catalog_product_category_id_35bf920b
     (category_id ASC NULLS LAST)
     WITH (fillfactor=100, deduplicate_items=True)
     TABLESPACE pg_default;
+
+2026.03.02 Начало домашки 24
