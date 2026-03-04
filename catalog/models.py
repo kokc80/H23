@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import SET_NULL
 
 
 class Category(models.Model):
@@ -20,17 +21,19 @@ class Product(models.Model):
     image = models.ImageField(upload_to='images/product')
     category = models.ForeignKey(
         Category,
-        on_delete=models.CASCADE,
+        on_delete=SET_NULL,
         related_name="products",
         verbose_name="Категория",
         help_text="Введите категорию продукта",
+        null=True,
+        blank = True,
     )
     price = models.FloatField(default=0.0, verbose_name="Цена за покупку")
     date_created_at = models.DateField(verbose_name="Дата создания")
     date_updated_at = models.DateField(verbose_name="Дата изменения")
 
-    def __str__(self):
-        return f"{self.name_prod}, ({self.category})"
+    # def __str__(self):
+    #     return f"{self.name_prod}, ({self.category})"
 
     class Meta:
         verbose_name = 'Продукт'

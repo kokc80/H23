@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Детали продукта</title>
-</head>
-<body>
+<!-- student_detail.html -->
+{% extends 'base.html' %}
+
+{% block title %}Детали студента{% endblock %}
+
+{% block content %}
+<p> <b>Наименование продукта</b><br>
 {{prod.name_prod}}
-</body>
-</html>
+<p> <b>Описание продукта</b><br>
+{{prod.descr_prod}}
+{% endblock %}
