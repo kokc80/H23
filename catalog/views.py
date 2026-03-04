@@ -3,6 +3,9 @@ from django.shortcuts import render
 from catalog.models import Product
 
 
+def index(request):
+    return render(request, "base.html")
+
 def product_list(request):
     """контроллер для отображения страницы с подробной информацией о товаре."""
     products = Product.objects.all()
@@ -14,4 +17,7 @@ def contact(request):
     return render(request, "contacts.html")
 
 
-#def product_detail(request)
+def product_detail(request, product_id):
+    prod =  Product.objects.get(id = product_id)
+    context = {"prod":prod}
+    return render(request,"product_detail.html", context)

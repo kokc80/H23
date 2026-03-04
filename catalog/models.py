@@ -6,7 +6,7 @@ class Category(models.Model):
     descr_cat = models.CharField(max_length=100, verbose_name="Описание")
 
     def __str__(self):
-        return f'{self.name_cat}'
+        return f"{self.name_cat}"
 
     class Meta:
         verbose_name = "Категория"
@@ -28,6 +28,9 @@ class Product(models.Model):
     price = models.FloatField(default=0.0, verbose_name="Цена за покупку")
     date_created_at = models.DateField(verbose_name="Дата создания")
     date_updated_at = models.DateField(verbose_name="Дата изменения")
+
+    def __str__(self):
+        return f"{self.name_prod}, ({self.category})"
 
     class Meta:
         verbose_name = 'Продукт'
