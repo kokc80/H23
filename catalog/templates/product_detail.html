@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <!-- student_detail.html -->
 {% extends 'base.html' %}
-
+{% load my_tags %}
 {% block title %}Детали студента{% endblock %}
 
 {% block content %}
-<p> <b>Наименование продукта</b><br>
-{{prod.name_prod}}
-<p> <b>Описание продукта</b><br>
-{{prod.descr_prod}}
+<center>
+    <p> <b>Наименование продукта</b><br></p>
+    <p>{{prod.name_prod}}</p>
+    <p><img src = "{{ prod.image | media_filter }}" width = "300"></p>
+    <p> <b>Описание продукта</b><br></p>
+    <p>{{prod.descr_prod}}</p>
+    <p><a class="btn btn-primary" href="{% url 'catalog:product_list' %}" role="button">К спсиску продукции</a></p>
+</center>>
 {% endblock %}
