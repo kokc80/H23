@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             name="idd_cat",
         ),
         migrations.RemoveField(
-            model_name="product",
+            model_name="catalog",
             name="idd_prod",
         ),
     ]

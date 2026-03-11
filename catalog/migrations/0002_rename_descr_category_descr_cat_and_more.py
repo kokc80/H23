@@ -16,12 +16,12 @@ class Migration(migrations.Migration):
             new_name="descr_cat",
         ),
         migrations.RenameField(
-            model_name="product",
+            model_name="catalog",
             old_name="descr",
             new_name="descr_prod",
         ),
         migrations.RenameField(
-            model_name="product",
+            model_name="catalog",
             old_name="cost",
             new_name="price",
         ),

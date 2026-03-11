@@ -1,10 +1,10 @@
-    {% extends "base.html" %}
+    {% extends "catalog/base.html" %}
     {% load my_tags %}
     {% block content %}
     <center><H2>Список продуктов</H2></center>
     <p>
     <div class="row text-center">
-        {%for item in products%}
+        {% for item in object_list %}
         <div class="col-3">
             <div class="card mb-4 box-shadow">
                 <div class="card-header">
@@ -18,7 +18,7 @@
                         <p><li>- {{ item.category }}</li></p>
                         <p><li>- {{ item.descr_prod|truncatechars:50 }}</li></p>
                         <p><li>- {{ item.date_created_at }}</li></p>
-                        <p><a class="btn btn-primary" href="{% url 'catalog:product_det' item.id %}" role="button">Посмотреть детали</a></p>
+                        <p><a class="btn btn-primary" href="{% url 'catalog:product_detail' item.id %}" role="button">Посмотреть детали ({% url 'catalog:product_detail' item.id %})</a></p>
                     </ul>
 
                 </div>
