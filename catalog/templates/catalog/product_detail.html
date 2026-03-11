@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- student_detail.html -->
-{% extends 'product/base.html' %}
+{% extends 'catalog/base.html' %}
 {% load my_tags %}
 {% block title %}Детали студента{% endblock %}
 
@@ -11,6 +11,6 @@
     <p><img src = "{{ object.image | media_filter }}" width = "300"></p>
     <p> <b>Описание продукта</b><br></p>
     <p>{{object.descr_prod}}</p>
-    <p><a class="btn btn-prim ary" href="{% url 'catalog:product_list' %}" role="button">К списку продукции</a></p>
+    <p><a class="btn btn-primary" href="{% url 'catalog:product_list' %}" role="button">К списку продукции</a></p>
 </center>>
 {% endblock %}
