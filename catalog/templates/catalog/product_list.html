@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <h1 class="card-title pricing-card-title">$ {{ item.price }}</h1>
                     <ul class="list-unstyled mt-3 mb-4 text-start m-3">
-                        <img src = "{{ item.image | media_filter }}" width = "100">
+                        <img src = "{{ item.image | media_filter }}" width = "100" title = "{{ item.image | media_filter }}">
                         <p><li>- <H1>{{ item.name_prod }}</H1></li></p>
                         <p><li>- {{ item.category }}</li></p>
                         <p><li>- {{ item.descr_prod|truncatechars:50 }}</li></p>
