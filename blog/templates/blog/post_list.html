@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+{% load my_tags %}
+
+{% block content %}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Мой Блог</h1>
+    <p class="lead">Добро пожаловать! Добавьте новый пост, если блог пуст.</p>
+</div>
+<div class="container mt-5">
+    <div class="row">
+    </div>
+    <div class="row text-center">
+        {% for blog_item in object_list %}
+        <div class="col-3">
+            {{ blog_item.title }}
+        </div>
+        {% empty %}
+        <p>Нет блогов. <a href="{% url 'blog:post_create' %}">Создать новый блог</a>.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
