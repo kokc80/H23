@@ -32,4 +32,3 @@ class CatalogDetailView(DetailView):
 
 def contact(request):
     return render(request, "catalog/contacts.html")
-

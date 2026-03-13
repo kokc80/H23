@@ -17,6 +17,6 @@ class BlogListView(ListView):
 
 class BlogCreateView(CreateView):
     model = Blog
-    fields = ["title", "content", "preview_image", "published"]
+    fields = ["title", "content", "preview_image", "published", "views_count"]
     template_name = "blog/post_create.html"
     success_url = reverse_lazy("blog:post_list")
