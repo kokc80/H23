@@ -18,7 +18,7 @@
                         <p><li>- {{ item.category }}</li></p>
                         <p><li>- {{ item.descr_prod|truncatechars:50 }}</li></p>
                         <p><li>- {{ item.date_created_at }}</li></p>
-                        <p><a class="btn btn-primary" href="{% url 'catalog:product_detail' item.id %}" role="button">Посмотреть детали ({% url 'catalog:product_detail' item.id %})</a></p>
+                        <p><a class="btn btn-primary" href="{% url 'catalog:product_detail' item.id %}" role="button">Посмотреть детали</a></p>
                     </ul>
 
                 </div>

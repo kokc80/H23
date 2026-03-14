@@ -13,11 +13,17 @@
         <table border = "0" >
         {% for blog_item in object_list %}
         <div class="col-3">
-            <tr bgcolor="teal"><td colspan="2" height="30"><p align="left">{{ blog_item.title }}</p></td></tr>
+            <tr bgcolor="teal"><td colspan="2" height="30">
+                <p align="left">{{ blog_item.title }} создан: ({{ blog_item.created_at }}) <br>
+                    просмотров {{ blog_item.views_count }}
+            </p></td></tr>
             <tr>
                 <td width="110"><img src = "{{ blog_item.preview_image | media_filter }}" width = "100" title = "{{ blog_item.preview_image | media_filter }}"></td>
                 <td><p align="left">{{ blog_item.content }}</p></td>
             </tr>
+            <tr><td colspan="2" height="30">
+            <a href="{{ blog_item.id }}" class="btn btn-primary">ПРОСМОТРЕТЬ</a>
+            </td></tr>
         </div>
         {% empty %}
         <p>Нет блогов. <a href="{% url 'blog:post_create' %}">Создать новый блог</a>.</p>

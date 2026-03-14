@@ -5,12 +5,10 @@
 {% block title %}Детали студента{% endblock %}
 
 {% block content %}
-<center>
-    <p> <b>Наименование продукта</b><br></p>
-    <p>{{object.name_prod}}</p>
-    <p><img src = "{{ object.image | media_filter }}" width = "300"></p>
-    <p> <b>Описание продукта</b><br></p>
-    <p>{{object.descr_prod}}</p>
-    <p><a class="btn btn-primary" href="{% url 'catalog:product_list' %}" role="button">К списку продукции</a></p>
-</center>>
+    <p align="center"><b>Наименование продукта</b><br></p>
+    <p align="center">{{object.name_prod}}</p>
+    <p align="center"><img src = "{{ object.image | media_filter }}" width = "300"></p>
+    <p align="center"> <b>Описание продукта</b><br></p>
+    <p align="center">{{object.descr_prod}}</p>
+    <p align="center"><a class="btn btn-primary" href="{% url 'catalog:product_list' %}" role="button">К списку продукции</a></p>
 {% endblock %}

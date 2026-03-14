@@ -2,14 +2,14 @@
 {% load my_tags %}
 {% block content %}
 <div class="card mb-3">
-  <img src="{{ blog.image| media_filter }}" class="card-img-top" alt="...">
+  <p align="center"><img src="{{ object.preview_image| media_filter }}"  width = "300" title="{{ object.preview_image| media_filter }}" ></p>
   <div class="card-body">
-    <h5 class="card-title">{{ blog.title }}</h5>
-    <p class="card-text"> {{ blog.content }}</p>
-    <p class="card-text"><small class="text-muted"> Количество просмотров: {{blog.views_count}}</small></p>
-    <p class="card-text"><small class="text-muted">{{blog.created_at}}</small></p>
-      <a href="{% url 'blog:post_update' blog.id %}" class="btn btn-primary">Редактировать</a>
-      <a href="{% url 'blog:post_confirm_delete' blog.id %}" class="btn btn-danger">удалить</a>
+    <p align="center"><b>{{ object.title }}</h5>{{ object.created_at }}</b></p>
+    <p align="center">{{ object.content }}</p>
+    <p align="center"><small class="text-muted"> Количество просмотров: {{object.views_count}}</small></p>
+    <p align="center"><small class="text-muted">{{object.created_at}}</small></p>
+    <p align="center"><a href="{% url 'blog:post_edit' object.id %}" class="btn btn-primary">Редактировать</a>
+      <a href="{% url 'blog:post_delete' object.id %}" class="btn btn-danger">Удалить</a></p>
   </div>
 </div>
 {% endblock %}
