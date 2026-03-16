@@ -32,8 +32,8 @@ class Product(models.Model):
     date_created_at = models.DateField(verbose_name="Дата создания")
     date_updated_at = models.DateField(verbose_name="Дата изменения")
 
-    # def __str__(self):
-    #     return f"{self.name_prod}, ({self.category})"
+    def __str__(self):
+        return f"{self.name_prod}, ({self.category})"
 
     class Meta:
         verbose_name = "Продукт"
