@@ -44,8 +44,9 @@ class ProductCreateView(CreateView):
 
 class ProductUpdateView(UpdateView):
     model = Product
-    form_class = ProductForm
-    template_name = "catalog/product_create.html"
+    fields = ["name_prod", "descr_prod", "image","category"]
+    # form_class = ProductForm
+    template_name = "catalog/product_edit.html"
     success_url = reverse_lazy("catalog:product_list")
 
 
