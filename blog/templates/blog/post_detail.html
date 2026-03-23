@@ -8,8 +8,9 @@
     <p align="center">{{ object.content }}</p>
     <p align="center"><small class="text-muted"> Количество просмотров: {{object.views_count}}</small></p>
     <p align="center"><small class="text-muted">{{object.created_at}}</small></p>
-    <p align="center"><a href="{% url 'blog:post_edit' object.id %}" class="btn btn-primary">Редактировать</a>
-      <a href="{% url 'blog:post_delete' object.id %}" class="btn btn-danger">Удалить</a></p>
+    <p align="center">
+    <a href="{% url 'blog:post_edit' object.id %}" class="btn btn-primary">Редактировать</a>
+    <a href="{% url 'blog:post_delete' object.id %}" class="btn btn-danger">Удалить</a></p>
   </div>
 </div>
 {% endblock %}

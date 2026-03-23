@@ -10,5 +10,7 @@
     <p align="center"><img src = "{{ object.image | media_filter }}" width = "300"></p>
     <p align="center"> <b>Описание продукта</b><br></p>
     <p align="center">{{object.descr_prod}}</p>
+    <a href="{% url 'catalog:product_edit' object.id %}" class="btn btn-primary">Редактировать</a>
+    <a href="{% url 'catalog:product_delete' object.id %}" class="btn btn-danger">Удалить</a>
     <p align="center"><a class="btn btn-primary" href="{% url 'catalog:product_list' %}" role="button">К списку продукции</a></p>
 {% endblock %}
