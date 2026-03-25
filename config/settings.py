@@ -1,4 +1,7 @@
+
 import os
+
+from django.conf.global_settings import STATIC_URL, STATICFILES_DIRS, AUTH_USER_MODEL
 from dotenv import load_dotenv
 
 """
@@ -42,6 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "catalog",
     "blog",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -130,3 +134,5 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "catalog\\static")]
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+AUTH_USER_MODEL = "users.CustomUser"
