@@ -1,0 +1,91 @@
+[
+{
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+        "name_prod": "Продукт 1",
+        "descr_prod": "Описание продукта 1",
+        "image": "",
+        "category": 2,
+        "price": 0.0,
+        "date_created_at": "2026-01-01",
+        "date_updated_at": "2026-01-11"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+        "name_prod": "Продукт 3",
+        "descr_prod": "Описание продукта 3",
+        "image": "",
+        "category": 3,
+        "price": 0.0,
+        "date_created_at": "2026-03-03",
+        "date_updated_at": "2026-01-11"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+        "name_prod": "Продукт 4",
+        "descr_prod": "Описание продукта 4",
+        "image": "",
+        "category": 3,
+        "price": 999.0,
+        "date_created_at": "2026-04-04",
+        "date_updated_at": "2026-01-11"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+        "name_prod": "Продукт 5",
+        "descr_prod": "Описание продукта 5",
+        "image": "",
+        "category": 4,
+        "price": 0.0,
+        "date_created_at": "2026-04-04",
+        "date_updated_at": "2026-01-11"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+        "name_prod": "Продукт 6",
+        "descr_prod": "Описание продукта 6",
+        "image": "",
+        "category": 3,
+        "price": 0.0,
+        "date_created_at": "2026-04-04",
+        "date_updated_at": "2026-01-11"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+        "name_cat": "Категория 1",
+        "descr_cat": "Описание категории 1"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+        "name_cat": "Категория 2",
+        "descr_cat": "Описание категории 2"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+        "name_cat": "Категория 3",
+        "descr_cat": "Описание категории 3"
+    }
+}
+]
