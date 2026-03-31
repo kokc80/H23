@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     "catalog",
     "blog",
     "users",
-]
+    ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
