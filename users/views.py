@@ -4,7 +4,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView
-
 from .forms import CustomUserChangeForm, CustomUserCreationForm
 from .models import CustomUser
 
@@ -12,7 +11,6 @@ from .models import CustomUser
 class RegisterView(CreateView):
     template_name = "users/register.html"
     form_class = CustomUserCreationForm
-    success_url = reverse_lazy("catalog:home")
 
     def form_valid(self, form):
         user = form.save()
