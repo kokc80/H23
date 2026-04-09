@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from catalog.models import Product
 from django.http import HttpResponse
 from django.views import View
@@ -35,14 +36,14 @@ class CatalogDetailView(DetailView):
 def contact(request):
     return render(request, "catalog/contacts.html")
 
-class ProductCreateView(CreateView):
+class ProductCreateView(LoginRequiredMixin, CreateView):
     model = Product
     form_class = ProductForm
     template_name = "catalog/product_create.html"
     success_url = reverse_lazy("catalog:product_list")
 
 
-class ProductUpdateView(UpdateView):
+class ProductUpdateView(LoginRequiredMixin, UpdateView):
     model = Product
     fields = ["name_prod", "descr_prod", "image","category"]
     # form_class = ProductForm
@@ -50,7 +51,7 @@ class ProductUpdateView(UpdateView):
     success_url = reverse_lazy("catalog:product_list")
 
 
-class ProductDeleteView(DeleteView):
+class ProductDeleteView(LoginRequiredMixin, DeleteView):
     model = Product
     template_name = "catalog/product_delete.html"
     success_url = reverse_lazy("catalog:product_list")
