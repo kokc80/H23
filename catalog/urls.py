@@ -9,15 +9,17 @@ from catalog.views import (
     ProductCreateView,
     ProductUpdateView,
     ProductDeleteView
-
 )
+from django.views.decorators.cache import cache_page
+
 
 app_name = CatalogConfig.name
 
 urlpatterns = [
     path("", CatalogHomeView.as_view(), name="base"),
+    path("home/", CatalogHomeView.as_view(), name="home"),
     path("contacts/", CatalogContactsView.as_view(), name="contacts"),
-    path("product_list/", CatalogListView.as_view(), name="product_list"),
+    path("product_list/", cache_page(60)(CatalogListView.as_view()), name="product_list"),
     path("product_detail/<int:pk>/", CatalogDetailView.as_view(), name="product_detail"),
     path("product_create/", ProductCreateView.as_view(), name="product_create"),
     path("product_edit/<int:pk>/", ProductUpdateView.as_view(), name="product_edit"),

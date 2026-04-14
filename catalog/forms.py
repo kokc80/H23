@@ -56,3 +56,9 @@ class ProductForm(forms.ModelForm):
             if image.size > max_size:
                 raise forms.ValidationError(f"Изображение: {image_name} не может быть больше 5 МБ")
         return image
+
+
+class ProductModeratorForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ["status"]
