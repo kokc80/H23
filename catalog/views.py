@@ -8,6 +8,8 @@ from catalog.forms import ProductForm, ProductModeratorForm
 from django.urls import reverse_lazy
 from django.core.exceptions import PermissionDenied
 
+from catalog.services import get_product_from_cache
+
 
 class CatalogHomeView(ListView):
     model = Product
@@ -28,6 +30,10 @@ class CatalogContactsView(View):
 
 class CatalogListView(ListView):
     model = Product
+    template_name = "catalog/base.html"
+    # context_object_name = "product_val"
+    def get_queryset(self):
+        return get_product_from_cache
 
 
 class CatalogDetailView(DetailView):
