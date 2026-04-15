@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from catalog.models import Product
@@ -30,10 +30,10 @@ class CatalogContactsView(View):
 
 class CatalogListView(ListView):
     model = Product
-    template_name = "catalog/base.html"
-    # context_object_name = "product_val"
+    template_name = "catalog/product.html"
+    context_object_name = "products"
     def get_queryset(self):
-        return get_product_from_cache
+        return get_product_from_cache()
 
 
 class CatalogDetailView(DetailView):

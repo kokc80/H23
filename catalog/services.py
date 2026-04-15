@@ -4,6 +4,7 @@ from django.core.cache import cache
 
 
 def get_product_from_cache():
+    """функция получения данных через кеш"""
     if not CACHE_ENABLED:
         return Product.objects.all()
     key = "product_list"
