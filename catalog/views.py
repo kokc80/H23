@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-from catalog.models import Product
+from catalog.models import Product, Category
 from django.http import HttpResponse
 from django.views import View
 from catalog.forms import ProductForm, ProductModeratorForm
@@ -99,3 +99,10 @@ class ProductsByCategoryView(ListView):
     def get_queryset(self):
         category_id = self.kwargs['category_id']  # получаем ID категории из URL
         return get_products_by_category(category_id)
+
+
+class CategoryListView(ListView):
+    model = Category
+    template_name = "catalog/category_list.html"
+    context_object_name = "categories"
+
