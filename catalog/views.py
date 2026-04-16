@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from catalog.models import Product, Category
@@ -89,7 +89,7 @@ class ProductDeleteView(LoginRequiredMixin, DeleteView):
 
 
 class ProductsByCategoryView(ListView):
-    template_name = 'products_by_category.html'  # укажи путь к нужному шаблону
+    template_name = 'catalog/products_by_category.html'  # укажи путь к нужному шаблону
     context_object_name = 'products'  # имя переменной, под которым будет передан список в шаблон
 
     def get_queryset(self):

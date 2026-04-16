@@ -1,3 +1,33 @@
+     {% extends "catalog/base.html" %}
+     {% load catalog_tags %}
+     {% block content %}
+         <H2>Список продуктов в категории <b> {{ products.name_cat }} </b></H2>
+         <div class="row text-center">
+        {% for item in object_list %}
+        <div class="col-3">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Карточка продукта</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$ {{ item.price }}</h1>
+                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                        <img src = "{{ item.image | media_filter }}" width = "100" title = "{{ item.image | media_filter }}">
+                        <li>- <H1>{{ item.name_prod }}</H1></li>
+                        <li>- {{ item.category }}</li>
+                        <li>- {{ item.descr_prod|truncatechars:50 }}</li>
+                        <li>- {{ item.date_created_at }}</li>
+                        <li><a class="btn btn-primary" href="{% url 'catalog:product_detail' item.id %}" role="button">Посмотреть детали</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+     {% endblock %}
+
+ <!--**
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,3 +45,4 @@
 
 </body>
 </html>
+ **-->
