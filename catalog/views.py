@@ -33,15 +33,11 @@ class CatalogListView(ListView):
     template_name = "catalog/product_list.html"
     context_object_name = "product_list"
     def get_queryset(self):
-        return get_product_from_cache
+        return get_product_from_cache()
 
 
 class CatalogDetailView(DetailView):
     model = Product
-
-
-def contact(request):
-    return render(request, "catalog/contacts.html")
 
 
 class ProductCreateView(LoginRequiredMixin, CreateView):
@@ -97,7 +93,7 @@ class ProductsByCategoryView(ListView):
     context_object_name = 'products'  # имя переменной, под которым будет передан список в шаблон
 
     def get_queryset(self):
-        category_id = self.kwargs['category_id']  # получаем ID категории из URL
+        category_id = self.kwargs['pk']  # получаем ID категории из URL
         return get_products_by_category(category_id)
 
 
