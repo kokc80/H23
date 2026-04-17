@@ -65,9 +65,3 @@ class ProductModeratorForm(forms.ModelForm):
                 "class": "form-control",
                 "placeholder": field.label
             })
-
-
-# class CategoryForm(forms.ModelForm):
-#     class Meta:
-#         model = Category
-#         fields = ['name', 'description']
