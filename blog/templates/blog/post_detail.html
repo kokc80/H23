@@ -1,5 +1,5 @@
 {% extends 'blog/base.html'%}
-{% load my_tags %}
+{% load blog_tags %}
 {% block content %}
 <div class="card mb-3">
   <p align="center"><img src="{{ object.preview_image| media_filter }}"  width = "300" title="{{ object.preview_image| media_filter }}" ></p>
